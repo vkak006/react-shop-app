@@ -2,7 +2,7 @@ const Checkbox = ({
   disabled = false,
   checked = false,
   label,
-  onChage,
+  onChange,
   ...restProps
 }) => {
   return (
@@ -11,7 +11,7 @@ const Checkbox = ({
         type="checkbox"
         checked={checked}
         disabled={disabled}
-        onChange={onChage}
+        onChange={onChange}
         {...restProps}
       />
       {label}

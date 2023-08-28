@@ -65,7 +65,7 @@ const LoginClient = () => {
               {/* 자동 로그인, 비밀번호 수정 */}
               <AutoSignInCheckbox
                 checked={isAutoLogin}
-                onChange={(e) => setIsAutoLogin(e.target.value)}
+                onChange={(e) => setIsAutoLogin(!isAutoLogin)}
               />
             </div>
             <div className={styles.buttonGroup}>

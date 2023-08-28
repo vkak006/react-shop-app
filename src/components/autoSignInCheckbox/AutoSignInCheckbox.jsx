@@ -21,7 +21,12 @@ const AutoSignInCheckbox = ({
                 {...restProps}
             />
             {checked && (
-                <Tooltip />
+                <Tooltip 
+                    left={-5}
+                    top={24}
+                    orientation={orientation}
+                    message={message}
+                />
             )}
         </div>
     )

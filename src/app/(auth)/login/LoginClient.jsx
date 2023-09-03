@@ -70,6 +70,23 @@ const LoginClient = () => {
                 checked={isAutoLogin}
                 onChange={(e) => setIsAutoLogin(!isAutoLogin)}
               />
+              <Link href={"./reset"} className={styles.findLink}>
+                비밀번호 수정하기
+                <svg
+                  className={styles.findLink}
+                  width="11"
+                  height="18"
+                  viewBox="0 0 11 18"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M1.5 1L9.5 9L1.5 17"
+                    stroke="#0074E9"
+                    strokeWidth="2"
+                  />
+                </svg>
+              </Link>
             </div>
             <div className={styles.buttonGroup}>
               {/* Button */}
@@ -78,10 +95,7 @@ const LoginClient = () => {
               </Button>
               <Divider />
               <Button width="100%" secondary>
-                <Link href={"/register"}>
-                회원가입
-                </Link>
-                
+                <Link href={"/register"}>회원가입</Link>
               </Button>
               <Divider />
               <div>

@@ -1,3 +1,4 @@
+import ToastProvider from '@/components/toastProvider/ToastProvider'
 import './globals.css'
 
 export const metadata = {
@@ -8,6 +9,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <ToastProvider />
       <body>{children}</body>
     </html>
   )

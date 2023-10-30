@@ -9,8 +9,11 @@ import Divider from "@/components/divider/Divider";
 import Input from "@/components/input/Input";
 import { useState } from "react";
 
-import LogoPath from '@/assets/colorful.svg'
+import LogoPath from "@/assets/colorful.svg";
 import Link from "next/link";
+import { toast } from "react-toastify";
+import { createUserWithEmailAndPassword } from "firebase/auth";
+import { auth } from "@/firebase/firebase";
 
 const RegisterClient = () => {
   const [email, setEmail] = useState("");
@@ -22,8 +25,20 @@ const RegisterClient = () => {
 
   const registerUser = (e) => {
     e.preventDefault();
+    if (password !== cPassword) {
+      return toast.error("비밀번호가 일치하지 않습니다");
+    }
     setIsLoading(true);
+
+    createUserWithEmailAndPassword(auth, email, password).then(
+      (userCredential) => {
+        const user = userCredential.user;
+        console.log("user", user);
+        setIsLoading(false);
+      }
+    );
   };
+
   return (
     <>
       {/* <Loader /> */}
